@@ -1,0 +1,18 @@
+#!/bin/env node
+
+'use strict';
+/**
+ * @file Launche the server
+ *
+ */
+
+
+// Load configuration
+var configuration = require("../config/configuration.js");
+var server = require('../app.js');
+
+// Start the server
+server.listen(configuration.port, function() {
+  'use strict';
+  console.log("Provider dropbox started at " + server.url);
+});

@@ -1,6 +1,6 @@
 'use strict';
 
-var dbox  = require("dbox");
+var dbox = require("dbox");
 var readline = require('readline');
 
 

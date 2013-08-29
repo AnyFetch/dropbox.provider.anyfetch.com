@@ -11,9 +11,9 @@ var rl = readline.createInterface({
   output: process.stdout
 });
 
-var app   = dbox.app({
+var app = dbox.app({
   "app_key": config.dropbox_id,
-  "app_secret": config.dropbox_secret
+  "app_secret": config.dropbox_secret,
 });
 
 app.requesttoken(function(status, requestToken){
