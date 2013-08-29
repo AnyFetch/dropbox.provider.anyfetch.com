@@ -1,7 +1,7 @@
 # Google Contact Cluestr Provider
 > Visit http://cluestr.com for details about Cluestr.
 
-Cluestr provider for contacts stored in Google Contacts.
+Cluestr provider for files stored in Dropbox
 
 # How to install?
 Vagrant up everything (`vagrant up`, `vagrant ssh`).
@@ -9,26 +9,26 @@ Vagrant up everything (`vagrant up`, `vagrant ssh`).
 You'll need to define some environment variables
 
 ```shell
-# Go to https://code.google.com/apis/console/b/0/?pli=1#access to ask from app id and secret
-export GOOGLE_CONTACTS_ID={google-app-id}
-export GOOGLE_CONTACTS_SECRET={google-app-secret}
+# Go to https://www.dropbox.com/developers/apps to ask for app id and secret
+export DROPBOX_ID="dropbox-id"
+export DROPBOX_SECRET="dropbox-secret"
 
-# Callback after google consent, most probably http://your-host/init/callback
-export GOOGLE_CONTACTS_CALLBACK_URL={callback-after-google-consent}
+# Callback after dropbox consent, most probably https://your-host/init/callback
+export DROPBOX_CALLBACK_URL="callback-after-dropbox-consent"
 
 # Cluestr app id and secret
-export GOOGLE_CONTACTS_CLUESTR_ID={cluestr-app-id}
-export GOOGLE_CONTACTS_CLUESTR_SECRET={cluestr-app-secret}
+export DROPBOX_CLUESTR_ID="cluestr-app-id"
+export DROPBOX_CLUESTR_SECRET="cluestr-app-secret"
 
 # See below for details
-export GOOGLE_CONTACTS_TEST_REFRESH_TOKEN={refresh-token}
+export DROPBOX_TEST_REFRESH_TOKEN="refresh-token"
 ```
 
 # How does it works?
-Cluestr Core will call `/init/connect` with cluestr authorization code. The user will be transparently redirected to Google consentment page.
-Google will then call us back on `/init/callback` with a `code` parameter. We'll trade the `code` for an `access_token` and a `refresh_token` and store it in the database, along with Cluestr tokens.
+Cluestr Core will call `/init/connect` with cluestr authorization code. The user will be transparently redirected to Dropbox consentment page.
+Dropbox will then call us back on `/init/callback` with a `code` parameter. We'll trade the `code` for an `access_token` and a `refresh_token` and store it in the database, along with Cluestr tokens.
 
-We can now sync datas between Google and Cluestr.
+We can now sync datas between Dropbox and Cluestr.
 
 This is where the `upload` helper comes into play.
 Every time `upload` is called, the function will retrieve, for all the accounts, the contacts modified since the last run, and upload the datas to Cluestr.
