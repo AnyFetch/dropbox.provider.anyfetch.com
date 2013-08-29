@@ -2,13 +2,13 @@
 // Configures the application
 
 // Load configuration and initialize server
-var restify       = require('restify'),
-    mongoose      = require('mongoose'),
-    configuration = require('./config/configuration.js'),
-    lib           = require("./lib/provider-google-contact"),
-    handlers      = lib.handlers,
-    middleware    = lib.middleware,
-    server        = restify.createServer();
+var restify = require('restify');
+var mongoose = require('mongoose');
+var configuration = require('./config/configuration.js');
+var lib = require("./lib/provider-dropbox");
+var handlers = lib.handlers;
+var middleware = lib.middleware;
+var server = restify.createServer();
 
 // Connect mongoose
 mongoose.connect(configuration.mongo_url);
