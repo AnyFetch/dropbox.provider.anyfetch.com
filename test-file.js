@@ -19,10 +19,11 @@ var app   = dbox.app({
 var client = app.client();
 
 var options = {
-  root: "dropbox"
+  cursor: "AAGeRFfkuYVnZQpnJfuCctDhjCMEfSSQwZ8DWFTRKZ9OA1gU0wRu1bnkxV4SHF8KNbbg5_CKoZ91RfOhzgf0AaRM4kzsGifEuP-og7c8pMowPsrGYQJ2Glj7m2dcOdztfi_1KSKjA0XYnEpyiublB0cSAkYIBqgZKbej7btv_jqdeTmuvh3w8OwgC0OkiOJx0TEutN4Gnkoxs51LdrCijaHOrZ1va5M6wdOzyfQa0-9HtsT4Xkvn_d3wVRuynTtALVE"
 };
 
-client.delta(function(status, reply){
-  console.log(reply);
+client.delta(options, function(status, reply){
+  console.log(status);
+  console.log(require('util').inspect(reply, true, 50));
   process.exit();
 });

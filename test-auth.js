@@ -17,7 +17,10 @@ var app = dbox.app({
 });
 
 app.requesttoken(function(status, requestToken){
-  console.log(requestToken);
+  if(status !== 200) {
+    throw requestToken;
+  }
+
   console.log('Visit the url: ', requestToken.authorize_url);
   rl.question('Press enter after grant.', function() {
 
