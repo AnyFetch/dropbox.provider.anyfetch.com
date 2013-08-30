@@ -18,7 +18,7 @@
   "scripts": {
     "start": "node ./bin/server",
     "upload": "node ./bin/upload",
-    "test": "NODE_ENV=test mocha -R spec -t 10000 -g exception",
+    "test": "NODE_ENV=test mocha -R spec -t 10000",
     "lint": "jshint lib/ test/ config/ bin/"
   },
   "main": "./lib/provider-dropbox",
