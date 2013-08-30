@@ -4,8 +4,8 @@ var should = require('should');
 var async = require('async');
 
 var config = require('../config/configuration.js');
-var providerGoogleContact = require('../lib/provider-google-contact');
-var Token = providerGoogleContact.models.Token;
+var providerDropbox = require('../lib/provider-dropbox');
+var Token = providerDropbox.models.Token;
 
 describe("Upload code", function () {
   it("should not raise any exception", function (done) {
@@ -16,7 +16,8 @@ describe("Upload code", function () {
 
     var token = new Token({
       cluestrToken: '123TEST',
-      googleToken: config.test_refresh_token
+      dropboxTokens: config.test_refresh_token,
+      cursor:"AAGeRFfkuYVnZQpnJfuCctDhjCMEfSSQwZ8DWFTRKZ9OA1gU0wRu1bnkxV4SHF8KNbbg5_CKoZ91RfOhzgf0AaRM4kzsGifEuP-og7c8pMowPsrGYQJ2Glj7m2dcOdztfi_1KSKjA0XYnEpyiublB0cSAkYIBqgZKbej7btv_jqdeTmuvh3w8OwgC0OkiOJx0TEutN4Gnkoxs51LdrCijaHOrZ1va5M6wdOzyfQa0-9HtsT4Xkvn_d3wVRuynTtALVE"
     });
 
     async.series([
@@ -31,7 +32,7 @@ describe("Upload code", function () {
       },
       // Retrieve associated contacts
       function(cb) {
-        providerGoogleContact.helpers.upload(cb);
+        providerDropbox.helpers.upload(cb);
       }
     ], done);
   });

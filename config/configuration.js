@@ -29,5 +29,9 @@ module.exports = {
   cluestr_id: process.env.DROPBOX_CLUESTR_ID,
   cluestr_secret: process.env.DROPBOX_CLUESTR_SECRET,
 
-  test_refresh_token: process.env.DROPBOX_TEST_REFRESH_TOKEN
+  test_refresh_token: {
+    oauth_token_secret: process.env.DROPBOX_TEST_OAUTH_TOKEN_SECRET,
+    oauth_token: process.env.DROPBOX_TEST_OAUTH_TOKEN,
+    uid: process.env.DROPBOX_TEST_UID
+  }
 };

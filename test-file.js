@@ -3,6 +3,8 @@
 var dbox = require("dbox");
 var readline = require('readline');
 
+var config = require('./config/configuration.js');
+
 
 var config = require('./config/configuration.js');
 
@@ -16,14 +18,16 @@ var app   = dbox.app({
   "app_secret": config.dropbox_secret
 });
 
-var client = app.client();
+var client = app.client(config.test_refresh_token);
 
 var options = {
-  cursor: "AAGeRFfkuYVnZQpnJfuCctDhjCMEfSSQwZ8DWFTRKZ9OA1gU0wRu1bnkxV4SHF8KNbbg5_CKoZ91RfOhzgf0AaRM4kzsGifEuP-og7c8pMowPsrGYQJ2Glj7m2dcOdztfi_1KSKjA0XYnEpyiublB0cSAkYIBqgZKbej7btv_jqdeTmuvh3w8OwgC0OkiOJx0TEutN4Gnkoxs51LdrCijaHOrZ1va5M6wdOzyfQa0-9HtsT4Xkvn_d3wVRuynTtALVE"
+  root: "dropbox"
 };
 
-client.delta(options, function(status, reply){
-  console.log(status);
-  console.log(require('util').inspect(reply, true, 50));
-  process.exit();
+client.get('/ic_launcher-web.png', options, function(status, reply, metadata){
+  if(status !== 200) {
+    throw reply;
+  }
+
+  console.log(reply.toString());
 });

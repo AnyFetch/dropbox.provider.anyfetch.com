@@ -21,7 +21,9 @@ export DROPBOX_CLUESTR_ID="cluestr-app-id"
 export DROPBOX_CLUESTR_SECRET="cluestr-app-secret"
 
 # See below for details
-export DROPBOX_TEST_REFRESH_TOKEN="refresh-token"
+export DROPBOX_TEST_OAUTH_TOKEN_SECRET=""
+export DROPBOX_TEST_OAUTH_TOKEN=""
+export DROPBOX_TEST_UID=""
 ```
 
 # How does it works?
@@ -44,7 +46,7 @@ Before running the test suite, you'll need to do:
 > node test-auth.js
 ```
 
-Follow the link in your browser with your Google Account. You'll be redirected to `localhost` (server is not running, so you'll get an error). Copy-paste the `code` parameter in your shell (in the URL, after /init/callback), then save the token as GOOGLE_CONTACTS_TEST_REFRESH_TOKEN environment variable.
+Follow the link in your browser with your Google Account. You'll be redirected to `localhost` (server is not running, so you'll get an error). Copy-paste the `code` parameter in your shell (in the URL, after /init/callback), then save the token as DROPBOX_TEST_* environment variable.
 
 > Warning: a refresh token is only displayed once. If you get it wrong for some reason, you'll need to clear the permission for your app on https://www.google.com/settings/u/1/security
 
