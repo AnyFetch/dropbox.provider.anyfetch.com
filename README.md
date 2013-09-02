@@ -38,7 +38,7 @@ This is where the `upload` helper comes into play.
 Every time `upload` is called, the function will retrieve, for all the accounts, the files modified since the last run, and upload the datas to Cluestr.
 Deleted files will also be deleted from Cluestr.
 
-The computation of the delta (between last run and now) is done by Dropbox, and can be really long in some rare cases (for most accounts it is a few seconds, on mine it lasts for 25 minutes -- heavy dropbox users beware! And that says nothing about the time to retrieve the datas after.)
+The computation of the delta (between last run and now) is done by Dropbox, and can be really long in some rare cases (for most accounts it is a few seconds, on mine it lasts for 25 minutes -- heavy Dropbox users beware! And that says nothing about the time to retrieve the datas after.)
 
 # How to test?
 Unfortunately, testing this module is really hard.

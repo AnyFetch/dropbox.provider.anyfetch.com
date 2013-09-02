@@ -16,7 +16,7 @@ describe("Upload code", function () {
 
     var token = new Token({
       cluestrToken: '123TEST',
-      dropboxTokens: config.test_refresh_token,
+      dropboxTokens: config.test_tokens,
       cursor:"AAHGAZxS20rjQgBQVVulcPzUCYmNf2m1KUpcEmsWOFnhGFpdDhSSRIgG-WAQQeNLYxq51l5AJDDtfD1Fox6vytTP0gn7ou7PL6Z3cMs2IADgjo2ED-YYyVLwP9D5XXaDYQlQb5vEiOtfLPu3sxObDGseyveffqn03r8iotTvoI_-wlxMa0TrngZLKlAgF_xT2lGsdpDBIxiFLXXCG-CadZvA2_2ncaCJQTjJh7ODmQ4o7pU32kOEpHsBgB31PfUP4t0"
     });
 

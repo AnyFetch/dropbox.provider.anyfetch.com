@@ -18,7 +18,7 @@ var app   = dbox.app({
   "app_secret": config.dropbox_secret
 });
 
-var client = app.client(config.test_refresh_token);
+var client = app.client(config.test_tokens);
 
 var options = {
   root: "dropbox"
