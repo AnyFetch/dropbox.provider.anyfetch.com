@@ -8,7 +8,7 @@ Vagrant up everything (`vagrant up`, `vagrant ssh`).
 
 You'll need to define some environment variables
 
-```shell
+```bash
 # Go to https://www.dropbox.com/developers/apps to ask for app id and secret
 export DROPBOX_ID="dropbox-id"
 export DROPBOX_SECRET="dropbox-secret"
@@ -53,6 +53,6 @@ Before running the test suite, you'll need to do:
 Follow the link in your browser with your Dropbox.
 After that, press enter and copy the result in your shell, then. Save the values as DROPBOX_TEST_* environment variable.
 
-> Advanced users: keep `DROPBOX_TEST_CURSOR` empty by default. If you want to make the tests run faster, `console.log` the return of a call to `helpers.retrieve.delta()` and paste the `cursor` value.
+> *Advanced users*: keep `DROPBOX_TEST_CURSOR` empty by default. If you want to make the tests run faster, `console.log` the return of a call to `helpers.retrieve.delta()` and paste the `cursor` value.
 
 Support: `support@papiel.fr`.
