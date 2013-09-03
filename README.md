@@ -20,6 +20,9 @@ export DROPBOX_CALLBACK_URL="callback-after-dropbox-consent"
 export DROPBOX_CLUESTR_ID="cluestr-app-id"
 export DROPBOX_CLUESTR_SECRET="cluestr-app-secret"
 
+# Number of files to upload at the same time
+export DROPBOX_MAX_CONCURRENCY="5"
+
 # See below for details
 export DROPBOX_TEST_OAUTH_TOKEN_SECRET=""
 export DROPBOX_TEST_OAUTH_TOKEN=""
