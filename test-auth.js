@@ -25,7 +25,7 @@ app.requesttoken(function(status, requestToken){
   rl.question('Press enter after grant.', function() {
 
     app.accesstoken(requestToken, function(status, accessToken){
-      console.log("Set this value in your DROPBOX_TEST_REFRESH_TOKEN environment: ", accessToken.oauth_token);
+      console.log("Set this value in your DROPBOX_TEST_* environment: ", accessToken.oauth_token);
       console.log(accessToken);
       process.exit();
     });

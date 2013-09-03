@@ -10,7 +10,7 @@ describe("Retrieve code", function () {
   it("should list files modified since", function (done) {
     var cursor = "AAGeRFfkuYVnZQpnJfuCctDhjCMEfSSQwZ8DWFTRKZ9OA1gU0wRu1bnkxV4SHF8KNbbg5_CKoZ91RfOhzgf0AaRM4kzsGifEuP-og7c8pMowPsrGYQJ2Glj7m2dcOdztfi_1KSKjA0XYnEpyiublB0cSAkYIBqgZKbej7btv_jqdeTmuvh3w8OwgC0OkiOJx0TEutN4Gnkoxs51LdrCijaHOrZ1va5M6wdOzyfQa0-9HtsT4Xkvn_d3wVRuynTtALVE";
 
-    retrieve.delta(config.test_refresh_token, cursor, function(err, files) {
+    retrieve.delta(config.test_tokens, cursor, function(err, files) {
       if(err) {
         throw err;
       }
@@ -23,7 +23,7 @@ describe("Retrieve code", function () {
   });
 
   it("should retrieve a file", function (done) {
-    retrieve.file(config.test_refresh_token, '/AndroidManifest.xml', function(err, file) {
+    retrieve.file(config.test_tokens, '/AndroidManifest.xml', function(err, file) {
       if(err) {
         throw err;
       }
