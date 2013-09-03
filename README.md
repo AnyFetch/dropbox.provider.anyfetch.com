@@ -1,4 +1,4 @@
-# Google Contact Cluestr Provider
+# Dropbox Cluestr Provider
 > Visit http://cluestr.com for details about Cluestr.
 
 Cluestr provider for files stored in Dropbox
