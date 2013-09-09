@@ -10,5 +10,8 @@ module.exports = function router(server, handlers) {
   // Connection phase
   server.get('/init/connect', handlers.init.connect);
   server.get('/init/callback', handlers.init.callback);
+
+  // Update phase
+  server.post('/update', handlers.update);
 };
  
