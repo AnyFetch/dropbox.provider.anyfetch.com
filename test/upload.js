@@ -22,18 +22,10 @@ describe("Upload code", function () {
 
     async.series([
       // Create a fake CluestrToken
-      function(cb) {
-        token.save(function(err) {
-          if(err) {
-            throw err;
-          }
-          cb();
-        });
-      },
+      async.apply(token.save),
+
       // Retrieve associated contacts
-      function(cb) {
-        providerDropbox.helpers.upload(cb);
-      }
+      async.apply(providerDropbox.helpers.upload(cb));
     ], done);
   });
 });

@@ -45,7 +45,6 @@
     "should": "1.2.x",
     "supertest": "0.7.x",
     "mocha-mongoose": "0.1.x",
-    "factory-lady": "0.1.x",
     "jshint": "2.1.x"
   },
   "licence": "Copyright Papiel",
