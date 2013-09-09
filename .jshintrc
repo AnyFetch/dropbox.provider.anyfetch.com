@@ -14,7 +14,7 @@
   "undef"         : true,
   "strict"        : true,
   "trailing"      : true,
-  "unused"        : false,
+  "unused"        : true,
   "loopfunc"      : true,
   
   "asi"           : false,

@@ -34,6 +34,7 @@ module.exports = {
   test_tokens: {
     oauth_token_secret: process.env.DROPBOX_TEST_OAUTH_TOKEN_SECRET,
     oauth_token: process.env.DROPBOX_TEST_OAUTH_TOKEN,
-    uid: process.env.DROPBOX_TEST_UID
-  }
+    uid: process.env.DROPBOX_TEST_UID,
+  },
+  test_cursor: process.env.DROPBOX_TEST_CURSOR
 };
