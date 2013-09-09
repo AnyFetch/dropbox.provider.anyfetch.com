@@ -1,13 +1,15 @@
 'use strict';
 
+var request = require('supertest');
 var should = require('should');
 var async = require('async');
 
+var app = require('../app.js');
 var config = require('../config/configuration.js');
 var providerDropbox = require('../lib/provider-dropbox');
 var Token = providerDropbox.models.Token;
 
-describe("Upload code", function () {
+describe("POST /upload", function () {
   it("should not raise any exception", function (done) {
     // It is quite hard to really test the upload code,
     // Therefore we'll only check no errors are raised.
@@ -26,7 +28,12 @@ describe("Upload code", function () {
         token.save(cb);
       },
       // Retrieve files
-      async.apply(providerDropbox.helpers.upload, token)
+      function(cb) {
+        var req = request(app).post('/update')
+          .send({access_token: token.cluestrToken})
+          .expect(204)
+          .end(done);
+      }
     ], done);
   });
 });
