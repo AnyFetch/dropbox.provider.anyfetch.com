@@ -38,7 +38,8 @@
     "mongoose-validator": "0.2.x",
     "cluestr": "0.1.x",
     "dbox": "0.6.x",
-    "request": "2.26.x"
+    "request": "2.26.x",
+    "sspawn": "0.1.1"
   },
   "devDependencies": {
     "mocha": "1.11.x",
