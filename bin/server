@@ -12,5 +12,5 @@ var configuration = require("../config/configuration.js");
 var server = require('../app.js');
 
 // Start the server
-var spawner = require('sspawn')(server, configuration.port);
+var spawner = require('sspawn')(server, {port: configuration.port});
 spawner.start();
