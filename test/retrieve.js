@@ -23,12 +23,15 @@ describe("Retrieve code", function () {
   });
 
   it("should retrieve a file", function (done) {
-    retrieve.file(config.test_tokens, '/AndroidManifest.xml', function(err, file) {
-      if(err) {
-        throw err;
-      }
+    var datas = "";
+    var stream = retrieve.streamFile(config.test_tokens, '/AndroidManifest.xml');
 
-      file.toString().length.should.be.above(15);
+    stream.on("data", function(chunk) {
+      datas += chunk;
+    });
+
+    stream.on("end", function() {
+      datas.length.should.be.above(15);
       done();
     });
   });
