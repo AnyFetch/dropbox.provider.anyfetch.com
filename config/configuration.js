@@ -16,6 +16,10 @@ if(node_env === "production") {
   default_port = 80;
 }
 
+if(!process.env.DROPBOX_CONNECT_URL) {
+  console.log("Connect url not specified, oAuth will not work.");
+}
+
 // Exports configuration for use by app.js
 module.exports = {
   env: node_env,
