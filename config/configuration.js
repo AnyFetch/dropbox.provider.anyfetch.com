@@ -25,6 +25,7 @@ module.exports = {
   dropbox_id: process.env.DROPBOX_ID,
   dropbox_secret: process.env.DROPBOX_SECRET,
   dropbox_callback: process.env.DROPBOX_CALLBACK_URL,
+  dropbox_connect: process.env.DROPBOX_CONNECT_URL,
 
   cluestr_id: process.env.DROPBOX_CLUESTR_ID,
   cluestr_secret: process.env.DROPBOX_CLUESTR_SECRET,
