@@ -27,6 +27,7 @@
   "expr"          : false,
   "forin"         : false,
   "funcscope"     : false,
+  "quotmark"      : false,
   "globalstrict"  : false,
   "iterator"      : false,
   "lastsemic"     : false,
