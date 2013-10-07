@@ -1,8 +1,8 @@
 'use strict';
 
+require('should');
 var request = require('supertest');
-var should = require('should');
-var async = require('async');
+var restify = require('restify');
 
 var app = require('../app.js');
 var config = require('../config/configuration.js');
@@ -10,11 +10,43 @@ var providerDropbox = require('../lib/provider-dropbox');
 var Token = providerDropbox.models.Token;
 
 describe("POST /upload", function () {
-  // It is quite hard to really test the upload code,
-  // Therefore we'll only check no errors are raised.
-  // For faster test, we won't upload.
-  config.cluestr_url = 'http://test/';
+  // Create a fake HTTP server
+  var server = restify.createServer();
+  server.use(restify.acceptParser(server.acceptable));
+  server.use(restify.queryParser());
+  server.use(restify.bodyParser());
 
+  server.post('/providers/documents', function(req, res, next) {
+    //console.log("Got document");
+    if(!req.params.identifier) {
+      throw new Error("No identifier");
+    }
+    res.send(200);
+    next();
+  });
+
+  server.del('/providers/documents', function(req, res, next) {
+    //console.log("Removed document");
+    if(!req.params.identifier) {
+      throw new Error("No identifier");
+    }
+    res.send(200);
+    next();
+  });
+
+  server.post('/providers/documents/file', function(req, res, next) {
+    //console.log("Got file");
+    if(!req.params.identifier) {
+      throw new Error("No identifier");
+    }
+    res.send(204);
+    next();
+  });
+
+  server.listen(1337, function() {});
+  process.env.CLUESTR_SERVER = 'http://localhost:1337';
+
+  
   var token;
   beforeEach(function(done) {
     token = new Token({
@@ -27,7 +59,7 @@ describe("POST /upload", function () {
   });
 
   it("should not raise any exception", function (done) {
-    var req = request(app).post('/update')
+    request(app).post('/update')
       .send({access_token: token.cluestrToken})
       .expect(204)
       .end(done);
