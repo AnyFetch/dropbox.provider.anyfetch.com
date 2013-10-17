@@ -1,0 +1,17 @@
+language: node_js
+services: mongodb
+node_js:
+- '0.10'
+before_script: npm install --dev
+script: npm test
+env:
+  global:
+  - DROPBOX_CALLBACK_URL="http://localhost:8000/init/callback"
+  - DROPBOX_CLUESTR_ID="fake-app-id"
+  - DROPBOX_CLUESTR_SECRET="fake-app-secret"
+  - DROPBOX_TEST_CURSOR="AAHGAZxS20rjQgBQVVulcPzUCYmNf2m1KUpcEmsWOFnhGFpdDhSSRIgG-WAQQeNLYxq51l5AJDDtfD1Fox6vytTP0gn7ou7PL6Z3cMs2IADgjo2ED-YYyVLwP9D5XXaDYQlQb5vEiOtfLPu3sxObDGseyveffqn03r8iotTvoI_-wlxMa0TrngZLKlAgF_xT2lGsdpDBIxiFLXXCG-CadZvA2_2ncaCJQTjJh7ODmQ4o7pU32kOEpHsBgB31PfUP4t0"
+  - secure: B/houGWoPcjRW34EAwSb7IH8eYl7Z9545y6wCl/gz8iZJ58iiW+htxQEBXqCRXKUb+60St11LmcReeqQNiINrxLQ67cjUyQ50BmkbBN+2oIFF4BvQxSLpca5pp6qhPQjHHpjVrAorPUS2OB1a6r5bMZo6MWCfUai/bMa7dG05zw=
+  - secure: JIWeLN4hhITrysPw8ZA8X1VL1qKWAFUt9oxIDGiTltdCYMa7TzCq2a9vGQnqj3avHSOU4GHXOys+1XhegA3DO3Gu0F9jMSb8xWD4mPVPAoqQPErVStWLndH6YJeUVnu+qBfGLmGJCyUfsjs5lUUke/cGqD9S913nBwJnECSZMOE=
+  - secure: TbuS5zIJNX6Qqkaw+ipj0bMGN6J0nnwsj0UUEJ7RdV+2oEym/EujJ1RYfy0GoI2XBFNm5b8L6VGLAtdJZreFvoGLhl+ixZaCI9pi4/k9wiPXYAUhnabTU8jTpIFHmSWXzoXMtx5jVpL6uzoDc/8HNP6X/Il1XEC5p8b61LhqK24=
+  - secure: EgmJhp0oSSvaId+0h6uuM6vpa6PPkE57IbXC9U76HfhlMSwto8FYEf0270OSKUHP1gcDJx42qwB4ZjdiGJUtkhige3uaUtUC/cgKiL5/rXVQiUwU5ZzMykD5Z86vsBPN3dLWrEL+rirQvUcKj4tSQMHekamwpBLLWvvCPecgpsw=
+  - secure: BGEgb/6Q8Z6/QdfpAnZjaRuWoVNz3Xc9LUOHUoour3sIYjXC5/ducewacvCBxAU2GVGsehOU4wJqRIyNaCUJXi0yVlxPDIG9tXXYF83GB6+ovBMTPJBzVIGvkdD5Tvlvm8Vkwrsq2OGTG1aFo3ERW7xYylpfcs50szMmeIDQ1Ss=
