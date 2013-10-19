@@ -17,11 +17,12 @@ describe("POST /upload", function () {
   server.use(restify.bodyParser());
 
   server.post('/providers/documents', function(req, res, next) {
-    console.log("Got document");
     if(!req.params.identifier) {
       throw new Error("No identifier");
     }
-    res.send(204);
+    console.log("Got document ", req.params.identifier);
+    res.send(200);
+    res.send(req.params);
     next();
   });
 
@@ -48,7 +49,7 @@ describe("POST /upload", function () {
 
   
   var token;
-  before(function(done) {
+  beforeEach(function(done) {
     token = new Token({
       cluestrToken: '123TEST',
       dropboxTokens: config.test_tokens,
@@ -56,13 +57,6 @@ describe("POST /upload", function () {
     });
 
     token.save(done);
-  });
-
-  it("should not raise any exception", function (done) {
-    request(app).post('/update')
-      .send({access_token: token.cluestrToken})
-      .expect(204)
-      .end(done);
   });
 
   it("should upload all changes since", function(done) {
