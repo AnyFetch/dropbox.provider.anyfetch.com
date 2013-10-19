@@ -14,7 +14,14 @@ describe("Retrieve helper", function () {
         throw err;
       }
 
-      console.log(files);
+      files.length.should.be.above(0);
+      files[0].should.have.lengthOf(2);
+
+      var datas = files[0][1];
+
+      datas.should.have.property('bytes');
+      datas.should.have.property('path');
+
       done();
     });
   });
@@ -28,7 +35,7 @@ describe("Retrieve helper", function () {
     });
 
     stream.on("end", function() {
-      datas.length.should.be.above(15);
+      datas.length.should.equal(923);
       done();
     });
   });
