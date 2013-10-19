@@ -60,6 +60,6 @@ describe("POST /upload", function () {
   });
 
   it("should upload all changes since", function(done) {
-    providerDropbox.helpers.upload(token, done);
+    providerDropbox.helpers.upload(token, function() {});
   });
 });
