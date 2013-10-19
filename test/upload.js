@@ -17,15 +17,12 @@ describe("Workflow", function () {
   var frontServer = CluestrProvider.debug.createTestApiServer();
   frontServer.listen(1337);
 
-  var token;
   before(function(done) {
-    token = new CluestrProvider.debug.Token({
+    CluestrProvider.debug.createToken({
       cluestrToken: 'fake_access_token',
       datas: config.test_tokens,
       cursor: process.env.DROPBOX_TEST_CURSOR
-    });
-
-    token.save(done);
+    }, done);
   });
 
   it("should upload datas to Cluestr", function (done) {
@@ -47,7 +44,7 @@ describe("Workflow", function () {
     request(server)
       .post('/update')
       .send({
-        access_token: token.cluestrToken
+        access_token: 'fake_access_token'
       })
       .expect(204)
       .end(function(err) {
