@@ -33,19 +33,15 @@
   ],
   "dependencies": {
     "async": "0.2.x",
-    "restify": "2.6.x",
-    "mongoose": "3.6.x",
-    "mongoose-validator": "0.2.x",
-    "cluestr": "0.x.x",
     "dbox": "0.6.x",
     "request": "2.26.x",
+    "cluestr-provider": "0.x.x",
     "sspawn": "0.1.1"
   },
   "devDependencies": {
     "mocha": "1.11.x",
     "should": "1.2.x",
     "supertest": "0.7.x",
-    "mocha-mongoose": "0.1.x",
     "jshint": "2.1.x"
   },
   "licence": "Copyright Papiel",
