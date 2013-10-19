@@ -7,6 +7,7 @@ script: npm test
 env:
   global:
   - DROPBOX_CALLBACK_URL="http://localhost:8000/init/callback"
+  - DROPBOX_CONNECT_URL="http://localhost:8000/init/connect"
   - DROPBOX_CLUESTR_ID="fake-app-id"
   - DROPBOX_CLUESTR_SECRET="fake-app-secret"
   - DROPBOX_TEST_CURSOR="AAHGAZxS20rjQgBQVVulcPzUCYmNf2m1KUpcEmsWOFnhGFpdDhSSRIgG-WAQQeNLYxq51l5AJDDtfD1Fox6vytTP0gn7ou7PL6Z3cMs2IADgjo2ED-YYyVLwP9D5XXaDYQlQb5vEiOtfLPu3sxObDGseyveffqn03r8iotTvoI_-wlxMa0TrngZLKlAgF_xT2lGsdpDBIxiFLXXCG-CadZvA2_2ncaCJQTjJh7ODmQ4o7pU32kOEpHsBgB31PfUP4t0"
