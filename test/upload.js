@@ -19,7 +19,7 @@ describe("Workflow", function () {
 
   before(function(done) {
     CluestrProvider.debug.createToken({
-      cluestrToken: 'fake_access_token',
+      cluestrToken: 'fake_dropbox_access_token',
       datas: config.test_tokens,
       cursor: process.env.DROPBOX_TEST_CURSOR
     }, done);
@@ -44,7 +44,7 @@ describe("Workflow", function () {
     request(server)
       .post('/update')
       .send({
-        access_token: 'fake_access_token'
+        access_token: 'fake_dropbox_access_token'
       })
       .expect(204)
       .end(function(err) {
