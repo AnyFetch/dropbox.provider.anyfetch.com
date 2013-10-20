@@ -17,25 +17,25 @@ describe("POST /upload", function () {
   server.use(restify.bodyParser());
 
   server.post('/providers/documents', function(req, res, next) {
-    console.log("Got document");
+    //console.log("Got document");
     if(!req.params.identifier) {
       throw new Error("No identifier");
     }
-    res.send(204);
+    res.send(200);
     next();
   });
 
   server.del('/providers/documents', function(req, res, next) {
-    console.log("Removed document");
+    //console.log("Removed document");
     if(!req.params.identifier) {
       throw new Error("No identifier");
     }
-    res.send(204);
+    res.send(200);
     next();
   });
 
   server.post('/providers/documents/file', function(req, res, next) {
-    console.log("Got file");
+    //console.log("Got file");
     if(!req.params.identifier) {
       throw new Error("No identifier");
     }
@@ -48,7 +48,7 @@ describe("POST /upload", function () {
 
   
   var token;
-  before(function(done) {
+  beforeEach(function(done) {
     token = new Token({
       cluestrToken: '123TEST',
       dropboxTokens: config.test_tokens,
