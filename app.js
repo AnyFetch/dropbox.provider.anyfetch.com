@@ -1,25 +1,11 @@
-// # app
-// Configures the application
+"use strict";
 
 // Load configuration and initialize server
-var restify = require('restify');
-var mongoose = require('mongoose');
-var configuration = require('./config/configuration.js');
-var lib = require("./lib/provider-dropbox");
-var handlers = lib.handlers;
-var middleware = lib.middleware;
-var server = restify.createServer();
+var cluestrProvider = require('cluestr-provider');
+var serverConfig = require('./lib/provider-dropbox');
 
-// Connect mongoose
-mongoose.connect(configuration.mongo_url);
 
-// Middleware Goes Here
-server.use(restify.acceptParser(server.acceptable));
-server.use(restify.queryParser());
-server.use(restify.bodyParser());
-
-// Load routes
-require("./config/routes.js")(server, handlers);
+var server = cluestrProvider.createServer(serverConfig);
 
 // Expose the server
 module.exports = server;
