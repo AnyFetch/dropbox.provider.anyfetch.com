@@ -17,7 +17,7 @@ describe("Workflow", function () {
   var frontServer = CluestrProvider.debug.createTestApiServer();
   frontServer.listen(1337);
 
-  before(require('cluestr-provider/test/cleaner'));
+  before(CluestrProvider.debug.cleanTokens);
   before(function(done) {
     CluestrProvider.debug.createToken({
       cluestrToken: 'fake_dropbox_access_token',
