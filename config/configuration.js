@@ -35,6 +35,7 @@ module.exports = {
   cluestr_secret: process.env.DROPBOX_CLUESTR_SECRET,
 
   max_concurrency: process.env.DROPBOX_MAX_CONCURRENCY || 5,
+  workers: process.env.WORKERS || 2,
 
   test_tokens: {
     oauth_token_secret: process.env.DROPBOX_TEST_OAUTH_TOKEN_SECRET,
