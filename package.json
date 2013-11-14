@@ -37,7 +37,7 @@
     "request": "2.26.x",
     "cluestr-provider": "0.x.x",
     "sspawn": "0.1.1",
-    "newrelic": "1.x.x", 
+    "newrelic": "1.x.x"
   },
   "devDependencies": {
     "mocha": "1.11.x",
