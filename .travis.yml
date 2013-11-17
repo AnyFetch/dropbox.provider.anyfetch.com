@@ -16,3 +16,10 @@ env:
   - secure: dbZQKKi73TmxcGUEBvZXi8g3JwSAS9ivlokAe8e5PN0vvCJeivLLsamU+Tsvbt/r4l3JJT20Q5p0ErS5i7hcM2FpyWbLvjNa49VJtA1yengTU88kE2QIiDDWKrS7qklJKLJveO/IhZMSX4oFpPiKCeOkocoxc1hFKXB3ZO5fNk0=
   - secure: E0zplLguQZ0r8Ve0IuhC2iL2uDtuIPORuQDBGoZpc+14NfVbVrPfwS9K2aUyDU70e3o/CIi2eNyDPYEKui2SvTIeUILTxM2IlXUXo2M0M787KtoQiJSoip6SfwFbM9SwgGy4CIi+Z/dcUrrOol9nKCN5DUpzOvpRiOv0NyVDmgs=
   - secure: GNQIkQ3tNJQEilnxSS7QSSH3SqEPFkWEAjCkaKf7XpWbuqg07ncfZZ8UBJERdp8SsQZnFk+mBGH/IYOIiKlsapQrFSMv3J74L5Uf/jcv4dZTp2qQwSbdXBSg48HK6HWekhYaZA5Y4T0RNN0LaMwn+q/i7k5k2uOc9buk58p/z+E=
+deploy:
+  provider: heroku
+  api_key:
+    secure: S6qiV3HEkFwL8It2Jp5ICYNNLlZFu7KBuTvS6yFI2lheHlASBXjqfHS6h16i08hxAao6NG7bN8WnPJ4ITr3oJnUYOShJDPtJYVbPg2Uir/cmyfQQlaYgdvC0Cc61+J1NoKTh8ZOxcg2FZ0coIIJVzZGW40UGpEUb3oAH4ptu/sM=
+  app: provider-dropbox
+  on:
+    repo: Papiel/provider-dropbox
