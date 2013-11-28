@@ -4,9 +4,6 @@
 var cluestrProvider = require('cluestr-provider');
 var serverConfig = require('./lib/provider-dropbox');
 
-// New relic tracing
-require('newrelic');
-
 
 var server = cluestrProvider.createServer(serverConfig);
 
