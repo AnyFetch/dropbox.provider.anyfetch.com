@@ -20,6 +20,6 @@ deploy:
   provider: heroku
   api_key:
     secure: S6qiV3HEkFwL8It2Jp5ICYNNLlZFu7KBuTvS6yFI2lheHlASBXjqfHS6h16i08hxAao6NG7bN8WnPJ4ITr3oJnUYOShJDPtJYVbPg2Uir/cmyfQQlaYgdvC0Cc61+J1NoKTh8ZOxcg2FZ0coIIJVzZGW40UGpEUb3oAH4ptu/sM=
-  app: provider-dropbox
+  app: anyfetch-provider-dropbox
   on:
     repo: Papiel/provider-dropbox
