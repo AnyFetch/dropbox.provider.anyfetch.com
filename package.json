@@ -34,7 +34,7 @@
   "dependencies": {
     "async": "0.2.x",
     "dbox": "0.6.x",
-    "request": "2.26.x",
+    "request": "2.30.x",
     "cluestr-provider": "0.x.x",
     "sspawn": "0.1.1",
     "newrelic": "1.x.x"
