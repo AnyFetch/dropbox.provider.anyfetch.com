@@ -3,7 +3,7 @@
 require('should');
 
 var config = require('../config/configuration.js');
-var retrieve = require('../lib/provider-dropbox/helpers/retrieve');
+var retrieve = require('../lib/helpers/retrieve');
 
 describe("Retrieve helper", function () {
   it("should list files modified since last run", function (done) {
