@@ -8,8 +8,8 @@ env:
   global:
   - DROPBOX_CALLBACK_URL="http://localhost:8000/init/callback"
   - DROPBOX_CONNECT_URL="http://localhost:8000/init/connect"
-  - DROPBOX_CLUESTR_ID="fake-app-id"
-  - DROPBOX_CLUESTR_SECRET="fake-app-secret"
+  - DROPBOX_ANYFETCH_ID="fake-app-id"
+  - DROPBOX_ANYFETCH_SECRET="fake-app-secret"
   - DROPBOX_TEST_CURSOR=""
   - secure: B/houGWoPcjRW34EAwSb7IH8eYl7Z9545y6wCl/gz8iZJ58iiW+htxQEBXqCRXKUb+60St11LmcReeqQNiINrxLQ67cjUyQ50BmkbBN+2oIFF4BvQxSLpca5pp6qhPQjHHpjVrAorPUS2OB1a6r5bMZo6MWCfUai/bMa7dG05zw=
   - secure: JIWeLN4hhITrysPw8ZA8X1VL1qKWAFUt9oxIDGiTltdCYMa7TzCq2a9vGQnqj3avHSOU4GHXOys+1XhegA3DO3Gu0F9jMSb8xWD4mPVPAoqQPErVStWLndH6YJeUVnu+qBfGLmGJCyUfsjs5lUUke/cGqD9S913nBwJnECSZMOE=
