@@ -31,8 +31,8 @@ module.exports = {
   dropbox_callback: process.env.DROPBOX_CALLBACK_URL,
   dropbox_connect: process.env.DROPBOX_CONNECT_URL,
 
-  cluestr_id: process.env.DROPBOX_CLUESTR_ID,
-  cluestr_secret: process.env.DROPBOX_CLUESTR_SECRET,
+  anyfetch_id: process.env.DROPBOX_ANYFETCH_ID,
+  anyfetch_secret: process.env.DROPBOX_ANYFETCH_SECRET,
 
   max_concurrency: process.env.DROPBOX_MAX_CONCURRENCY || 5,
   workers: process.env.WORKERS || 2,

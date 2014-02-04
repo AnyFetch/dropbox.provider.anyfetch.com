@@ -1,7 +1,7 @@
 'use strict';
 
 var request = require('supertest');
-var CluestrProvider = require('cluestr-provider');
+var AnyFetchProvider = require('anyfetch-provider');
 require('should');
 
 var config = require('../config/configuration.js');
@@ -11,32 +11,32 @@ var serverConfig = require('../lib/');
 
 describe("Workflow", function () {
 // Create a fake HTTP server
-  process.env.CLUESTR_SERVER = 'http://localhost:1337';
+  process.env.ANYFETCH_API_URL = 'http://localhost:1337';
 
   // Create a fake HTTP server
-  var frontServer = CluestrProvider.debug.createTestApiServer();
+  var frontServer = AnyFetchProvider.debug.createTestApiServer();
   frontServer.listen(1337);
 
-  before(CluestrProvider.debug.cleanTokens);
+  before(AnyFetchProvider.debug.cleanTokens);
   before(function(done) {
-    CluestrProvider.debug.createToken({
-      cluestrToken: 'fake_dropbox_access_token',
+    AnyFetchProvider.debug.createToken({
+      anyfetchToken: 'fake_dropbox_access_token',
       datas: config.test_tokens,
       cursor: process.test_cursor
     }, done);
   });
 
-  it("should upload datas to Cluestr", function (done) {
+  it("should upload datas to AnyFetch", function (done) {
     var originalQueueWorker = serverConfig.queueWorker;
-    serverConfig.queueWorker = function(task, cluestrClient, dropboxTokens, cb) {
+    serverConfig.queueWorker = function(task, anyfetchClient, dropboxTokens, cb) {
       task.should.have.lengthOf(2);
       if(task[1]) {
         task[1].should.have.property('bytes');
       }
 
-      originalQueueWorker(task, cluestrClient, dropboxTokens, cb);
+      originalQueueWorker(task, anyfetchClient, dropboxTokens, cb);
     };
-    var server = CluestrProvider.createServer(serverConfig);
+    var server = AnyFetchProvider.createServer(serverConfig);
 
     server.queue.drain = function() {
       done();
