@@ -11,7 +11,7 @@ var serverConfig = require('../lib/');
 
 describe("Workflow", function () {
 // Create a fake HTTP server
-  process.env.ANYFETCH_SERVER = 'http://localhost:1337';
+  process.env.ANYFETCH_API_URL = 'http://localhost:1337';
 
   // Create a fake HTTP server
   var frontServer = AnyFetchProvider.debug.createTestApiServer();
