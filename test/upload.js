@@ -10,8 +10,6 @@ var serverConfig = require('../lib/');
 
 
 describe("Workflow", function () {
-// Create a fake HTTP server
-  process.env.ANYFETCH_API_URL = 'http://localhost:1337';
 
   // Create a fake HTTP server
   var frontServer = AnyFetchProvider.debug.createTestApiServer();
@@ -45,7 +43,8 @@ describe("Workflow", function () {
     request(server)
       .post('/update')
       .send({
-        access_token: 'fake_dropbox_access_token'
+        access_token: 'fake_dropbox_access_token',
+        api_url: 'http://localhost:1337'
       })
       .expect(202)
       .end(function(err) {
