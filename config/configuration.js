@@ -30,6 +30,7 @@ module.exports = {
   dropbox_secret: process.env.DROPBOX_SECRET,
   dropbox_callback: process.env.DROPBOX_CALLBACK_URL,
   dropbox_connect: process.env.DROPBOX_CONNECT_URL,
+  dropbox_image: process.env.DROPBOX_IMAGE_URL,
 
   anyfetch_id: process.env.DROPBOX_ANYFETCH_ID,
   anyfetch_secret: process.env.DROPBOX_ANYFETCH_SECRET,

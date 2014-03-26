@@ -21,7 +21,7 @@ describe("Image handler", function() {
     });
   });
 
-  it("should require token_id", function(done) {
+  it("should require oauth_token", function(done) {
     request(server)
       .get('/image')
       .query({
@@ -29,7 +29,7 @@ describe("Image handler", function() {
         hash: 'hash'
       })
       .expect(409)
-      .expect(/specify token_id/)
+      .expect(/specify oauth_token/)
       .end(done);
   });
 
@@ -37,7 +37,7 @@ describe("Image handler", function() {
     request(server)
       .get('/image')
       .query({
-        token_id: token._id.toString(),
+        oauth_token: token.datas.oauth_token,
         hash: 'hash'
       })
       .expect(409)
@@ -49,7 +49,7 @@ describe("Image handler", function() {
     request(server)
       .get('/image')
       .query({
-        token_id: token._id.toString(),
+        oauth_token: token.datas.oauth_token,
         path: 'path',
       })
       .expect(409)
@@ -61,7 +61,7 @@ describe("Image handler", function() {
     request(server)
       .get('/image')
       .query({
-        token_id: token._id.toString(),
+        oauth_token: token.datas.oauth_token,
         path: 'path',
         hash: 'hash'
       })
@@ -73,7 +73,7 @@ describe("Image handler", function() {
 
   it("should return image with valid parameters", function(done) {
     var shasum = crypto.createHash('sha1');
-    shasum.update(token._id.toString());
+    shasum.update(token.datas.oauth_token);
     shasum.update(config.test_image_path);
     shasum.update(config.anyfetch_secret);
     var hash = shasum.digest('hex').toString();
@@ -81,7 +81,7 @@ describe("Image handler", function() {
     request(server)
       .get('/image')
       .query({
-        token_id: token._id.toString(),
+        oauth_token: token.datas.oauth_token,
         path: config.test_image_path,
         hash: hash,
         size: 's'
