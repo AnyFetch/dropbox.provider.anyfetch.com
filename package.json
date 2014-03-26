@@ -33,6 +33,7 @@
   ],
   "dependencies": {
     "restify": "2.6.x",
+    "mongoose": "3.8.x",
     "async": "0.2.x",
     "dbox": "0.6.x",
     "request": "2.34.x",

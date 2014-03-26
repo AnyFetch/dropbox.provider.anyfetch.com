@@ -42,5 +42,6 @@ module.exports = {
     oauth_token: process.env.DROPBOX_TEST_OAUTH_TOKEN,
     uid: process.env.DROPBOX_TEST_UID,
   },
+  test_image_path: process.env.DROPBOX_TEST_IMAGE_PATH, // Path to an image in the dropbox test account
   test_cursor: process.env.DROPBOX_TEST_CURSOR
 };
