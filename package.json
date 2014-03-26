@@ -32,6 +32,7 @@
     "dropbox"
   ],
   "dependencies": {
+    "restify": "2.6.x",
     "async": "0.2.x",
     "dbox": "0.6.x",
     "request": "2.34.x",
