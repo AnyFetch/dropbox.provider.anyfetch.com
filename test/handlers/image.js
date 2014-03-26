@@ -6,7 +6,7 @@ var crypto = require('crypto');
 var config = require('../../config/configuration.js');
 var server = require('../../app.js');
 
-describe.only("Image handler", function() {
+describe("Image handler", function() {
   var token;
 
   before(AnyFetchProvider.debug.cleanTokens);
@@ -83,7 +83,8 @@ describe.only("Image handler", function() {
       .query({
         token_id: token._id.toString(),
         path: config.test_image_path,
-        hash: hash
+        hash: hash,
+        size: 's'
       })
       .expect(200)
       .end(done);
