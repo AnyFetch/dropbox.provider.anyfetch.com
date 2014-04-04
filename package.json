@@ -18,7 +18,7 @@
   "scripts": {
     "start": "node ./bin/server",
     "upload": "node ./bin/upload",
-    "test": "NODE_ENV=test mocha -R spec -t 15000",
+    "test": "NODE_ENV=test mocha -R spec -t 15000 --recursive",
     "lint": "jshint lib/ test/ config/ bin/"
   },
   "main": "./lib/",
@@ -32,6 +32,7 @@
     "dropbox"
   ],
   "dependencies": {
+    "restify": "2.6.x",
     "async": "0.2.x",
     "dbox": "0.6.x",
     "request": "2.34.x",

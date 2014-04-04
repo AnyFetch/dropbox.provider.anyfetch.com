@@ -30,6 +30,7 @@ module.exports = {
   dropbox_secret: process.env.DROPBOX_SECRET,
   dropbox_callback: process.env.DROPBOX_CALLBACK_URL,
   dropbox_connect: process.env.DROPBOX_CONNECT_URL,
+  dropbox_image: process.env.DROPBOX_IMAGE_URL,
 
   anyfetch_id: process.env.DROPBOX_ANYFETCH_ID,
   anyfetch_secret: process.env.DROPBOX_ANYFETCH_SECRET,
@@ -42,5 +43,6 @@ module.exports = {
     oauth_token: process.env.DROPBOX_TEST_OAUTH_TOKEN,
     uid: process.env.DROPBOX_TEST_UID,
   },
+  test_image_path: process.env.DROPBOX_TEST_IMAGE_PATH, // Path to an image in the dropbox test account
   test_cursor: process.env.DROPBOX_TEST_CURSOR
 };
