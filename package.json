@@ -36,7 +36,7 @@
     "async": "0.2.x",
     "dbox": "0.6.x",
     "request": "2.34.x",
-    "anyfetch-provider": ">=0.3.11",
+    "anyfetch-provider": ">=0.3.13",
     "sspawn": "0.1.1",
     "newrelic": "1.x.x"
   },
