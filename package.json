@@ -32,8 +32,8 @@
     "dropbox"
   ],
   "dependencies": {
-    "restify": "2.6.x",
-    "async": "0.2.x",
+    "restify": "2.7.x",
+    "async": "0.8.x",
     "dbox": "0.6.x",
     "request": "2.34.x",
     "anyfetch-provider": ">=0.3.13",
@@ -42,9 +42,9 @@
   },
   "devDependencies": {
     "mocha": "1.18.x",
-    "should": "3.2.x",
-    "supertest": "0.10.x",
-    "jshint": "2.4.x"
+    "should": "3.3.x",
+    "supertest": "0.12.x",
+    "jshint": "2.5.x"
   },
   "licence": "MIT",
   "engines": {
