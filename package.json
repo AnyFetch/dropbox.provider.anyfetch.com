@@ -17,9 +17,7 @@
   },
   "scripts": {
     "start": "node ./bin/server",
-    "upload": "node ./bin/upload",
-    "test": "NODE_ENV=test mocha -R spec -t 15000 --recursive",
-    "lint": "jshint lib/ test/ config/ bin/"
+    "test": "NODE_ENV=test mocha -R spec -t 15000 --recursive"
   },
   "main": "./lib/",
   "repository": {
@@ -35,15 +33,13 @@
     "restify": "2.7.x",
     "async": "0.8.x",
     "dbox": "0.6.x",
-    "request": "2.34.x",
     "anyfetch-provider": ">=0.3.13",
     "newrelic": "1.x.x"
   },
   "devDependencies": {
     "mocha": "1.18.x",
     "should": "3.3.x",
-    "supertest": "0.12.x",
-    "jshint": "2.5.x"
+    "supertest": "0.12.x"
   },
   "licence": "MIT",
   "engines": {
