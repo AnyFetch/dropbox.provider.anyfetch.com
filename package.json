@@ -22,7 +22,7 @@
   "main": "./lib/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Papiel/dropbox.provider.anyfetch.com"
+    "url": "https://github.com/AnyFetch/dropbox.provider.anyfetch.com"
   },
   "keywords": [
     "anyfetch",

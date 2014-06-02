@@ -15,10 +15,10 @@ describe("Retrieve helper", function () {
       files.length.should.be.above(0);
       files[0].should.have.lengthOf(2);
 
-      var datas = files[0][1];
+      var data = files[0][1];
 
-      datas.should.have.property('bytes');
-      datas.should.have.property('path');
+      data.should.have.property('bytes');
+      data.should.have.property('path');
 
       done();
     });

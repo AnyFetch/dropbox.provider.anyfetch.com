@@ -19,7 +19,7 @@ var app = dbox.app({
 app.requesttoken(function(status, requestToken){
   if(status !== 200) {
     console.log(requestToken);
-    throw new Error("Unable to retrieve datas. Check your app_id / secret.");
+    throw new Error("Unable to retrieve data. Check your app_id / secret.");
   }
 
   console.log('Visit the url: ', requestToken.authorize_url);

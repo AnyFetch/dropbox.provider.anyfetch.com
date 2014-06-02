@@ -13,7 +13,7 @@ describe("Image handler", function() {
   before(function(done) {
     AnyFetchProvider.debug.createToken({
       anyfetchToken: 'fake_dropbox_access_token',
-      datas: config.test_tokens,
+      data: config.test_tokens,
       cursor: process.test_cursor
     }, function(err, _token) {
       token = _token;
@@ -37,7 +37,7 @@ describe("Image handler", function() {
     request(server)
       .get('/image')
       .query({
-        oauth_token: token.datas.oauth_token,
+        oauth_token: token.data.oauth_token,
         hash: 'hash'
       })
       .expect(409)
@@ -49,7 +49,7 @@ describe("Image handler", function() {
     request(server)
       .get('/image')
       .query({
-        oauth_token: token.datas.oauth_token,
+        oauth_token: token.data.oauth_token,
         path: 'path',
       })
       .expect(409)
@@ -61,7 +61,7 @@ describe("Image handler", function() {
     request(server)
       .get('/image')
       .query({
-        oauth_token: token.datas.oauth_token,
+        oauth_token: token.data.oauth_token,
         path: 'path',
         hash: 'hash'
       })
@@ -73,7 +73,7 @@ describe("Image handler", function() {
 
   it("should return image with valid parameters", function(done) {
     var shasum = crypto.createHash('sha1');
-    shasum.update(token.datas.oauth_token);
+    shasum.update(token.data.oauth_token);
     shasum.update(config.test_image_path);
     shasum.update(config.anyfetch_secret);
     var hash = shasum.digest('hex').toString();
@@ -81,7 +81,7 @@ describe("Image handler", function() {
     request(server)
       .get('/image')
       .query({
-        oauth_token: token.datas.oauth_token,
+        oauth_token: token.data.oauth_token,
         path: config.test_image_path,
         hash: hash,
         size: 's'
