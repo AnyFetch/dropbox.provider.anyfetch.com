@@ -19,12 +19,12 @@ describe("Workflow", function () {
   before(function(done) {
     AnyFetchProvider.debug.createToken({
       anyfetchToken: 'fake_dropbox_access_token',
-      datas: config.test_tokens,
+      data: config.test_tokens,
       cursor: process.test_cursor
     }, done);
   });
 
-  it("should upload datas to AnyFetch", function (done) {
+  it("should upload data to AnyFetch", function (done) {
     var originalQueueWorker = serverConfig.queueWorker;
     serverConfig.queueWorker = function(task, anyfetchClient, dropboxTokens, cb) {
       task.should.have.lengthOf(2);

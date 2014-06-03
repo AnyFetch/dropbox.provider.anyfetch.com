@@ -22,7 +22,7 @@
   "main": "./lib/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Papiel/dropbox.provider.anyfetch.com"
+    "url": "https://github.com/AnyFetch/dropbox.provider.anyfetch.com"
   },
   "keywords": [
     "anyfetch",
@@ -33,7 +33,7 @@
     "restify": "2.8.x",
     "async": "0.9.x",
     "dbox": "0.6.x",
-    "anyfetch-provider": ">=0.3.14",
+    "anyfetch-provider": ">=0.3.15",
     "newrelic": "1.x.x"
   },
   "devDependencies": {
