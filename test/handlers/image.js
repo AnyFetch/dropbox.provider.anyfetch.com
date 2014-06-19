@@ -86,7 +86,7 @@ describe("Image handler", function() {
         hash: hash,
         size: 's'
       })
-      .expect(function(res) { console.log(res.body);})
+      .expect(200)
       .end(done);
   });
 });
