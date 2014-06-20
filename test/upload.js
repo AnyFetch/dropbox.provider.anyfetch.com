@@ -28,9 +28,7 @@ describe("Workflow", function () {
     var originalQueueWorker = serverConfig.queueWorker;
     serverConfig.queueWorker = function(task, anyfetchClient, dropboxTokens, cb) {
       task.should.have.lengthOf(2);
-      if(task[1]) {
-        task[1].should.have.property('bytes');
-      }
+      task[1].should.have.property('bytes');
 
       originalQueueWorker(task, anyfetchClient, dropboxTokens, cb);
     };
