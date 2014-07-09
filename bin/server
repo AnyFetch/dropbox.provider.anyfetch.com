@@ -1,9 +1,5 @@
 #!/bin/env node
 'use strict';
-/**
- * @file Launch the server
- *
- */
 
 // Load configuration
 var config = require("../config/configuration.js");
