@@ -20,32 +20,29 @@ if(node_env === "production") {
   default_port = 80;
 }
 
-if(!process.env.DROPBOX_CONNECT_URL) {
-  console.log("Connect url not specified, oAuth will not work.");
-}
-
 // Exports configuration for use by app.js
 module.exports = {
   env: node_env,
   port: process.env.PORT || default_port,
-  mongo_url: process.env.MONGO_URL || ("mongodb://localhost/provider-dropbox-" + node_env),
 
-  dropbox_id: process.env.DROPBOX_ID,
-  dropbox_secret: process.env.DROPBOX_SECRET,
-  dropbox_callback: process.env.DROPBOX_CALLBACK_URL,
-  dropbox_connect: process.env.DROPBOX_CONNECT_URL,
-  dropbox_image: process.env.DROPBOX_IMAGE_URL,
+  mongoUrl: process.env.MONGOLAB_URI,
+  redisUrl: process.env.REDISCLOUD_URL,
 
-  anyfetch_id: process.env.DROPBOX_ANYFETCH_ID,
-  anyfetch_secret: process.env.DROPBOX_ANYFETCH_SECRET,
+  dropboxId: process.env.DROPBOX_ID,
+  dropboxSecret: process.env.DROPBOX_SECRET,
 
-  max_concurrency: process.env.DROPBOX_MAX_CONCURRENCY || 5,
+  providerUrl: process.env.PROVIDER_URL,
 
-  test_tokens: {
+  appId: process.env.DROPBOX_ANYFETCH_ID,
+  appSecret: process.env.DROPBOX_ANYFETCH_SECRET,
+
+  maxConcurrency: process.env.DROPBOX_MAX_CONCURRENCY || 5,
+
+  testTokens: {
     oauth_token_secret: process.env.DROPBOX_TEST_OAUTH_TOKEN_SECRET,
     oauth_token: process.env.DROPBOX_TEST_OAUTH_TOKEN,
     uid: process.env.DROPBOX_TEST_UID,
   },
-  test_image_path: process.env.DROPBOX_TEST_IMAGE_PATH, // Path to an image in the dropbox test account
-  test_cursor: process.env.DROPBOX_TEST_CURSOR
+  testImagePath: process.env.DROPBOX_TEST_IMAGE_PATH, // Path to an image in the dropbox test account
+  testCursor: process.env.DROPBOX_TEST_CURSOR
 };

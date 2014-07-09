@@ -7,7 +7,7 @@ var retrieve = require('../lib/helpers/retrieve');
 
 describe("Retrieve helper", function () {
   it("should list files modified since last run", function (done) {
-    retrieve.delta(config.test_tokens, config.test_cursor, function(err, files) {
+    retrieve.delta(config.testTokens, config.testCursor, function(err, files) {
       if(err) {
         throw err;
       }
