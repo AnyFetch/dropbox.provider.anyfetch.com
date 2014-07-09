@@ -1,8 +1,8 @@
 'use strict';
 
 var request = require('supertest');
-var AnyFetchProvider = require('anyfetch-provider');
 var Anyfetch = require('anyfetch');
+var AnyFetchProvider = require('anyfetch-provider');
 require('should');
 
 var config = require('../config/configuration.js');
@@ -13,8 +13,9 @@ var serverConfig = require('../lib/');
 describe("Workflow", function () {
 
   // Create a fake HTTP server
-  Anyfetch.setApiUrl('http://localhost:8000');
-  Anyfetch.setManagerUrl('http://localhost:8000');
+  Anyfetch.setApiUrl('http://localhost:1337');
+  Anyfetch.setManagerUrl('http://localhost:1337');
+
   var server = Anyfetch.createMockServer();
   server.listen(1337);
 
