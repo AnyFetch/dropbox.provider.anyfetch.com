@@ -7,18 +7,13 @@ var config = require('../../config/configuration.js');
 var server = require('../../app.js');
 
 describe("Image handler", function() {
-  var token;
-
   before(AnyFetchProvider.debug.cleanTokens);
   before(function(done) {
     AnyFetchProvider.debug.createToken({
       anyfetchToken: 'fake_dropbox_access_token',
       data: config.testTokens,
-      cursor: process.testCursor
-    }, function(err, _token) {
-      token = _token;
-      done(err);
-    });
+      cursor: config.testCursor
+    }, done);
   });
 
   it("should require oauth_token", function(done) {
@@ -37,7 +32,7 @@ describe("Image handler", function() {
     request(server)
       .get('/image')
       .query({
-        oauth_token: token.data.oauth_token,
+        oauth_token: config.testTokens.oauth_token,
         hash: 'hash'
       })
       .expect(409)
@@ -49,7 +44,7 @@ describe("Image handler", function() {
     request(server)
       .get('/image')
       .query({
-        oauth_token: token.data.oauth_token,
+        oauth_token: config.testTokens.oauth_token,
         path: 'path',
       })
       .expect(409)
@@ -61,7 +56,7 @@ describe("Image handler", function() {
     request(server)
       .get('/image')
       .query({
-        oauth_token: token.data.oauth_token,
+        oauth_token: config.testTokens.oauth_token,
         path: 'path',
         hash: 'hash'
       })
@@ -73,7 +68,7 @@ describe("Image handler", function() {
 
   it("should return image with valid parameters", function(done) {
     var shasum = crypto.createHash('sha1');
-    shasum.update(token.data.oauth_token);
+    shasum.update(config.testTokens.oauth_token);
     shasum.update(config.testImagePath);
     shasum.update(config.appSecret);
     var hash = shasum.digest('hex').toString();
@@ -81,7 +76,7 @@ describe("Image handler", function() {
     request(server)
       .get('/image')
       .query({
-        oauth_token: token.data.oauth_token,
+        oauth_token: config.testTokens.oauth_token,
         path: config.testImagePath,
         hash: hash,
         size: 's'
