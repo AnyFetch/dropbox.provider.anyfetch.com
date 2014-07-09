@@ -33,7 +33,7 @@
     "restify": "2.8.x",
     "async": "0.9.x",
     "dbox": "0.6.x",
-    "anyfetch-provider": "1.x.x",
+    "anyfetch-provider": "^1.0.8",
     "newrelic": "1.x.x",
     "dotenv": "^0.4.0"
   },
