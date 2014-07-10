@@ -24,6 +24,7 @@ if(node_env === "production") {
 module.exports = {
   env: node_env,
   port: process.env.PORT || default_port,
+  maxSize: process.env.MAX_SIZE || 50,
 
   mongoUrl: process.env.MONGOLAB_URI,
   redisUrl: process.env.REDISCLOUD_URL,
