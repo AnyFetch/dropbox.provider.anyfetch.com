@@ -1,6 +1,7 @@
 'use strict';
 
 var request = require('supertest');
+var Anyfetch = require('anyfetch');
 var AnyFetchProvider = require('anyfetch-provider');
 require('should');
 
@@ -12,31 +13,44 @@ var serverConfig = require('../lib/');
 describe("Workflow", function () {
 
   // Create a fake HTTP server
-  var frontServer = AnyFetchProvider.debug.createTestApiServer();
-  frontServer.listen(1337);
+  Anyfetch.setApiUrl('http://localhost:1337');
+  Anyfetch.setManagerUrl('http://localhost:1337');
+
+  var server = Anyfetch.createMockServer();
+  server.listen(1337);
 
   before(AnyFetchProvider.debug.cleanTokens);
   before(function(done) {
     AnyFetchProvider.debug.createToken({
       anyfetchToken: 'fake_dropbox_access_token',
-      data: config.test_tokens,
-      cursor: process.test_cursor
+      data: config.testTokens,
+      cursor: config.testCursor
     }, done);
   });
 
   it("should upload data to AnyFetch", function (done) {
-    var originalQueueWorker = serverConfig.queueWorker;
-    serverConfig.queueWorker = function(task, anyfetchClient, dropboxTokens, cb) {
-      task.should.have.lengthOf(2);
-      task[1].should.have.property('bytes');
+    var originalQueueWorker = serverConfig.workers.addition;
+    var counter = 0;
+    serverConfig.workers.addition = function(job, cb) {
+      job.task.should.have.property('path');
+      job.task.should.have.property('metadata');
+      job.task.metadata.should.have.property('bytes');
 
-      originalQueueWorker(task, anyfetchClient, dropboxTokens, cb);
-    };
-    var server = AnyFetchProvider.createServer(serverConfig);
+      originalQueueWorker(job, function(err) {
+        if(err) {
+          return done(err);
+        }
 
-    server.queue.drain = function() {
-      done();
+        counter += 1;
+        if(counter === 3) {
+          done();
+        }
+        else {
+          cb();
+        }
+      });
     };
+    var server = AnyFetchProvider.createServer(serverConfig.connectFunctions, serverConfig.updateAccount, serverConfig.workers, serverConfig.config);
 
     request(server)
       .post('/update')

@@ -13,8 +13,8 @@ You'll need to define some environment variables
 export DROPBOX_ID="dropbox-id"
 export DROPBOX_SECRET="dropbox-secret"
 
-# Callback after dropbox consent, most probably https://your-host/init/callback
-export DROPBOX_CALLBACK_URL="callback-after-dropbox-consent"
+# Provider URL, most probably https://your-host
+export PROVIDER_URL="https://your-host"
 
 # AnyFetch app id and secret
 export DROPBOX_ANYFETCH_ID="anyfetch-app-id"

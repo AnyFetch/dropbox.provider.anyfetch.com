@@ -10,6 +10,10 @@
     {
       "name": "Pierre-Marie Dartus",
       "email": "dartus.pierremarie@gmail.com"
+    },
+    {
+      "name": "Quentin Buathier",
+      "email": "quentin.buathier@epitech.eu"
     }
   ],
   "bin": {
@@ -33,13 +37,14 @@
     "restify": "2.8.x",
     "async": "0.9.x",
     "dbox": "0.6.x",
-    "anyfetch-provider": "^0.3.16",
+    "anyfetch-provider": "^1.0.11",
     "dotenv": "^0.4.0"
   },
   "devDependencies": {
     "mocha": "1.18.x",
     "should": "3.3.x",
-    "supertest": "0.12.x"
+    "supertest": "0.12.x",
+    "anyfetch": "^1.0.6"
   },
   "licence": "MIT",
   "engines": {
