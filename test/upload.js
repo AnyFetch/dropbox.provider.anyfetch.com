@@ -38,12 +38,15 @@ describe("Workflow", function () {
 
       originalQueueWorker(job, function(err) {
         if(err) {
-          cb(err);
+          return done(err);
         }
 
         counter += 1;
         if(counter === 3) {
-          return done();
+          done();
+        }
+        else {
+          cb();
         }
       });
     };
