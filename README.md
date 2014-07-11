@@ -10,15 +10,15 @@ You'll need to define some environment variables
 
 ```bash
 # Go to https://www.dropbox.com/developers/apps to ask for app id and secret
-export DROPBOX_ID="dropbox-id"
-export DROPBOX_SECRET="dropbox-secret"
+export DROPBOX_API_ID="dropbox-id"
+export DROPBOX_API_SECRET="dropbox-secret"
 
 # Provider URL, most probably https://your-host
 export PROVIDER_URL="https://your-host"
 
 # AnyFetch app id and secret
-export DROPBOX_ANYFETCH_ID="anyfetch-app-id"
-export DROPBOX_ANYFETCH_SECRET="anyfetch-app-secret"
+export ANYFETCH_API_ID="anyfetch-app-id"
+export ANYFETCH_API_SECRET="anyfetch-app-secret"
 
 # Number of files to upload at the same time
 export DROPBOX_MAX_CONCURRENCY="5"

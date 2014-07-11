@@ -1,7 +1,7 @@
 language: node_js
-services: 
-  - mongodb
-  - redis-server
+services:
+- mongodb
+- redis-server
 node_js:
 - '0.10'
 before_script: npm install --dev
@@ -9,15 +9,15 @@ script: npm test
 env:
   global:
   - PROVIDER_URL="http://localhost:8000"
-  - DROPBOX_ANYFETCH_ID="fake-app-id"
-  - DROPBOX_ANYFETCH_SECRET="fake-app-secret"
+  - ANYFETCH_API_ID="fake-app-id"
+  - ANYFETCH_API_SECRET="fake-app-secret"
   - DROPBOX_TEST_CURSOR=""
   - DROPBOX_TEST_IMAGE_PATH="/neamarstamplittle.png"
-  - secure: B/houGWoPcjRW34EAwSb7IH8eYl7Z9545y6wCl/gz8iZJ58iiW+htxQEBXqCRXKUb+60St11LmcReeqQNiINrxLQ67cjUyQ50BmkbBN+2oIFF4BvQxSLpca5pp6qhPQjHHpjVrAorPUS2OB1a6r5bMZo6MWCfUai/bMa7dG05zw=
-  - secure: JIWeLN4hhITrysPw8ZA8X1VL1qKWAFUt9oxIDGiTltdCYMa7TzCq2a9vGQnqj3avHSOU4GHXOys+1XhegA3DO3Gu0F9jMSb8xWD4mPVPAoqQPErVStWLndH6YJeUVnu+qBfGLmGJCyUfsjs5lUUke/cGqD9S913nBwJnECSZMOE=
-  - secure: dbZQKKi73TmxcGUEBvZXi8g3JwSAS9ivlokAe8e5PN0vvCJeivLLsamU+Tsvbt/r4l3JJT20Q5p0ErS5i7hcM2FpyWbLvjNa49VJtA1yengTU88kE2QIiDDWKrS7qklJKLJveO/IhZMSX4oFpPiKCeOkocoxc1hFKXB3ZO5fNk0=
-  - secure: E0zplLguQZ0r8Ve0IuhC2iL2uDtuIPORuQDBGoZpc+14NfVbVrPfwS9K2aUyDU70e3o/CIi2eNyDPYEKui2SvTIeUILTxM2IlXUXo2M0M787KtoQiJSoip6SfwFbM9SwgGy4CIi+Z/dcUrrOol9nKCN5DUpzOvpRiOv0NyVDmgs=
-  - secure: GNQIkQ3tNJQEilnxSS7QSSH3SqEPFkWEAjCkaKf7XpWbuqg07ncfZZ8UBJERdp8SsQZnFk+mBGH/IYOIiKlsapQrFSMv3J74L5Uf/jcv4dZTp2qQwSbdXBSg48HK6HWekhYaZA5Y4T0RNN0LaMwn+q/i7k5k2uOc9buk58p/z+E=
+  - secure: S9jTNgQkyn7cEIT4GrNjg/zB1zkK6a6/Zy9AxKRFKfKHOd0QOSqxDICiPnaztJyJpwiOTem0z/g1A3+6m1ZrMAfU4Koz2o/ZeLIavDImylC63D4y0BjDI1vQv/J/MHN+d5p3CLayXsXKRWlfFSpJXUpMqvJ4LPqWe04eFp5MoXE=
+  - secure: UuZhCS5lbsvnqbmcg9OpDcAzC2+6jJaSIrY7XBfHJXaMPXHR6O+cuk++3xeFqGjjkzcIQACRmsbokGBgQZLsqBtYzxlnXaaWkPWlmuvzjrk8t+oVYNmuj4skhphkOVVSRgegio0BkNaqEXXypkkFC2NMnY05tFK0KH8MLz4c0RA=
+  - secure: XHTwRLCgMGseXvDf5Ns9vs07Wdg43SIpjeKIJRzmtwkvjXUP5Dk0Y5/2O98eq3NnSZnCcH9W/Mj2/tZs3GTnkrTvE81Ys7KR3PQ7PJUr8wJqeNlQOPaLNwtQqcDM9ImZEjArh2KbsgYujmB8G6B9Sar8sULrXsG/OuSdflM+RVw=
+  - secure: PgtfXcVwIiP3TVE/6lYcEvugSvzZAHu6S3hoT4GLwlph03/U1G5NkOwhnnJW8TircO3mnVJk8/OwxsCByNSp+W0Y0DwzLtOoga9tEwBkEtixFdoQUwB+O9LcOpOg2dKEwIjFQqoUWDoaGBc7fSrOLAc4Y7bho4lQck7sJZidv2k=
+  - secure: h8NwpdJ4dKDwfCjS//kfrkQkrgqk5y0ObQPydB7BWk7xFPHzyc9zVV5ADgSlRckNBOuZcQpoGNbM8j1HDFqGN7lRvRZnj09MlApN5rGfnUQhAO2P4SHzcSZyrSMtQkr7WewbYNJ0k2VLAtjmod3Ny+QbcybbfXQg62YE+VNi05U=
 deploy:
   provider: heroku
   api_key:
