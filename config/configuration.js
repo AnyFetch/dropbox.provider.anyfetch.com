@@ -26,16 +26,16 @@ module.exports = {
   port: process.env.PORT || default_port,
   maxSize: process.env.MAX_SIZE || 50,
 
-  mongoUrl: process.env.MONGOLAB_URI,
-  redisUrl: process.env.REDISCLOUD_URL,
+  mongoUrl: process.env.MONGO_URL || process.env.MONGOLAB_URI,
+  redisUrl: process.env.REDIS_URL || process.env.REDISCLOUD_URL,
 
-  dropboxId: process.env.DROPBOX_ID,
-  dropboxSecret: process.env.DROPBOX_SECRET,
+  dropboxId: process.env.DROPBOX_API_ID,
+  dropboxSecret: process.env.DROPBOX_API_SECRET,
 
   providerUrl: process.env.PROVIDER_URL,
 
-  appId: process.env.DROPBOX_ANYFETCH_ID,
-  appSecret: process.env.DROPBOX_ANYFETCH_SECRET,
+  appId: process.env.ANYFETCH_API_ID,
+  appSecret: process.env.ANYFETCH_API_SECRET,
 
   maxConcurrency: process.env.DROPBOX_MAX_CONCURRENCY || 5,
 
