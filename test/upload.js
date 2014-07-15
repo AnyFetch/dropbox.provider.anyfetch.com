@@ -24,7 +24,8 @@ describe("Workflow", function () {
     AnyFetchProvider.debug.createToken({
       anyfetchToken: 'fake_dropbox_access_token',
       data: config.testTokens,
-      cursor: config.testCursor
+      cursor: config.testCursor,
+      accountName: 'accountName'
     }, done);
   });
 
