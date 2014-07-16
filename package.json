@@ -37,14 +37,14 @@
     "restify": "2.8.x",
     "async": "0.9.x",
     "dbox": "0.6.x",
-    "anyfetch-provider": "^1.0.15",
+    "anyfetch-provider": "^1.0.22",
     "dotenv": "^0.4.0"
   },
   "devDependencies": {
-    "mocha": "1.18.x",
-    "should": "3.3.x",
-    "supertest": "0.12.x",
-    "anyfetch": "^1.0.6"
+    "mocha": "1.20.x",
+    "should": "4.0.x",
+    "supertest": "0.13.x",
+    "anyfetch": "^1.0.7"
   },
   "licence": "MIT",
   "engines": {
