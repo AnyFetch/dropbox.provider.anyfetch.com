@@ -58,4 +58,4 @@ After that, press enter and copy the result in your shell, then. Save the values
 
 > *Advanced users*: keep `DROPBOX_TEST_CURSOR` empty by default. If you want to make the tests run faster, `console.log` the return of a call to `helpers.retrieve.delta()` and paste the `cursor` value.
 
-Support: `support@papiel.fr`.
+Support: `support@anyfetch.com`.
