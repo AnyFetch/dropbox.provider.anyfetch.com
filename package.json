@@ -36,12 +36,12 @@
   "dependencies": {
     "restify": "2.8.x",
     "async": "0.9.x",
-    "dbox": "0.6.x",
+    "dbox": "git://github.com/AnyFetch/node-dbox.git",
     "anyfetch-provider": "^1.0.26",
     "dotenv": "^0.4.0"
   },
   "devDependencies": {
-    "mocha": "1.20.x",
+    "mocha": "^1.21.3",
     "should": "4.0.x",
     "supertest": "0.13.x",
     "anyfetch": "^1.0.7"
