@@ -57,7 +57,8 @@ describe("Workflow", function () {
       .post('/update')
       .send({
         access_token: 'fake_dropbox_access_token',
-        api_url: 'http://localhost:1337'
+        api_url: 'http://localhost:1337',
+        documents_per_update: 2500
       })
       .expect(202)
       .end(function(err) {
