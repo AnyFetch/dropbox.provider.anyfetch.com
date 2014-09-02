@@ -44,7 +44,7 @@
     "mocha": "^1.21.3",
     "should": "4.0.x",
     "supertest": "0.13.x",
-    "anyfetch": "^1.0.7"
+    "anyfetch": "^2.0.4"
   },
   "licence": "MIT",
   "engines": {
