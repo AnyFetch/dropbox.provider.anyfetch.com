@@ -37,14 +37,14 @@
     "restify": "2.8.x",
     "async": "0.9.x",
     "dbox": "git://github.com/AnyFetch/node-dbox.git",
-    "anyfetch-provider": "^1.0.38",
+    "anyfetch-provider": "^1.0.44",
     "dotenv": "^0.4.0"
   },
   "devDependencies": {
     "mocha": "^1.21.3",
     "should": "4.0.x",
     "supertest": "0.13.x",
-    "anyfetch": "^1.0.7"
+    "anyfetch": "^2.0.4"
   },
   "licence": "MIT",
   "engines": {
