@@ -45,5 +45,12 @@ module.exports = {
     uid: process.env.DROPBOX_TEST_UID,
   },
   testImagePath: process.env.DROPBOX_TEST_IMAGE_PATH, // Path to an image in the dropbox test account
-  testCursor: process.env.DROPBOX_TEST_CURSOR
+  testCursor: process.env.DROPBOX_TEST_CURSOR,
+
+  opbeat: {
+    organization_id: process.env.OPBEAT_ORGANIZATION_ID,
+    app_id: process.env.OPBEAT_APP_ID,
+    secret_token: process.env.OPBEAT_SECRET_TOKEN,
+    silent: true
+  }
 };
