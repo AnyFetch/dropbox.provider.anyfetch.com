@@ -37,7 +37,7 @@
     "restify": "2.8.x",
     "async": "0.9.x",
     "dbox": "git://github.com/AnyFetch/node-dbox.git",
-    "anyfetch-provider": "^1.1.3",
+    "anyfetch-provider": "^1.1.4",
     "dotenv": "^0.4.0"
   },
   "devDependencies": {
