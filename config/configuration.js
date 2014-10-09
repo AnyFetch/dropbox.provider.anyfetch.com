@@ -47,6 +47,11 @@ module.exports = {
   testImagePath: process.env.DROPBOX_TEST_IMAGE_PATH, // Path to an image in the dropbox test account
   testCursor: process.env.DROPBOX_TEST_CURSOR,
 
+  kue: {
+    attempts: 2,
+    backoff: {delay: 20 * 1000, type: 'fixed'}
+  },
+
   opbeat: {
     organization_id: process.env.OPBEAT_ORGANIZATION_ID,
     app_id: process.env.OPBEAT_APP_ID,
