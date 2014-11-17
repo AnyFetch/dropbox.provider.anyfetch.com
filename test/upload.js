@@ -29,9 +29,10 @@ describe("Workflow", function () {
     }, done);
   });
 
-  it("should upload data to AnyFetch", function (done) {
+  it("should upload data to AnyFetch", function(done) {
     var originalQueueWorker = serverConfig.workers.addition;
     var counter = 0;
+
     serverConfig.workers.addition = function(job, cb) {
       job.task.should.have.property('path');
       job.task.should.have.property('metadata');
@@ -47,12 +48,7 @@ describe("Workflow", function () {
         }
 
         counter += 1;
-        if(counter === 3) {
-          done();
-        }
-        else {
-          cb();
-        }
+        cb();
       });
     };
     var server = AnyFetchProvider.createServer(serverConfig.connectFunctions, serverConfig.updateAccount, serverConfig.workers, serverConfig.config);
@@ -70,5 +66,10 @@ describe("Workflow", function () {
           throw err;
         }
       });
+
+    server.usersQueue.once('empty', function() {
+      counter.should.eql(4);
+      done();
+    });
   });
 });
