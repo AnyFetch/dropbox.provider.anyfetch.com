@@ -30,28 +30,10 @@ describe("Workflow", function () {
   });
 
   it("should upload data to AnyFetch", function(done) {
-    var originalQueueWorker = serverConfig.workers.addition;
     var counter = 0;
 
-    serverConfig.workers.addition = function(job, cb) {
-      job.task.should.have.property('path');
-      job.task.should.have.property('metadata');
-      job.task.metadata.should.have.property('bytes');
-
-      originalQueueWorker(job, function(err) {
-        if(err && err.toString().match(/Failure to retrieve data or empty file/i)) {
-          err = null;
-        }
-
-        if(err) {
-          return done(err);
-        }
-
-        counter += 1;
-        cb();
-      });
-    };
-    var server = AnyFetchProvider.createServer(serverConfig.connectFunctions, serverConfig.updateAccount, serverConfig.workers, serverConfig.config);
+    serverConfig.config.retry = 0;
+    var server = AnyFetchProvider.createServer(serverConfig.connectFunctions, __dirname + '/workers-test.js', __dirname + '/../lib/update.js', serverConfig.config);
 
     request(server)
       .post('/update')
@@ -66,6 +48,18 @@ describe("Workflow", function () {
           throw err;
         }
       });
+
+    server.usersQueue.on('job.task.completed', function() {
+      counter += 1;
+    });
+
+    server.usersQueue.on('job.task.failed', function(job, err) {
+      done(err);
+    });
+
+    server.usersQueue.on('job.update.failed', function(job, err) {
+      done(err);
+    });
 
     server.usersQueue.once('empty', function() {
       counter.should.eql(4);
