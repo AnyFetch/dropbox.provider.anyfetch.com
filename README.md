@@ -4,8 +4,6 @@
 AnyFetch provider for files stored in Dropbox
 
 # How to install?
-Vagrant up everything (`vagrant up`, `vagrant ssh`).
-
 You'll need to define some environment variables
 
 ```bash
@@ -31,14 +29,16 @@ export DROPBOX_TEST_UID=""
 export DROPBOX_TEST_CURSOR=""
 ```
 
-# How does it works?
-AnyFetch Core will call `/init/connect` with anyfetch authorization code. We will generate a request_token and transparently redirect the user to Dropbox consentment page.
+# How does it work?
+## Init
+AnyFetch API will call `/init/connect` with anyfetch authorization code. We will generate a request_token and transparently redirect the user to Dropbox consentment page.
 Dropbox will then call us back on `/init/callback`. We'll check our request_token has been granted approval, and store this.
 
 We can now sync data between Dropbox and AnyFetch.
 
+## Update
 This is where the `upload` helper comes into play.
-Every time `upload` is called, the function will retrieve, for all the accounts, the files modified since the last run, and upload the data to AnyFetch.
+Every time `upload` is called, the function will retrieve the files modified since the last run, and upload them to AnyFetch.
 Deleted files will also be deleted from AnyFetch.
 
 The computation of the delta (between last run and now) is done by Dropbox, and can be really long in some rare cases (for most accounts it is a few seconds, on mine it lasts for 25 minutes -- heavy Dropbox users beware! And that says nothing about the time to retrieve the data after.)
