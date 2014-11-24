@@ -37,7 +37,8 @@ module.exports = {
   appId: process.env.ANYFETCH_API_ID,
   appSecret: process.env.ANYFETCH_API_SECRET,
 
-  concurrency: process.env.DROPBOX_CONCURRENCY || 5,
+  usersConcurrency: process.env.DROPBOX_USERS_CONCURRENCY || 1,
+  concurrency: process.env.DROPBOX_CONCURRENCY || 1,
 
   testTokens: {
     oauth_token_secret: process.env.DROPBOX_TEST_OAUTH_TOKEN_SECRET,
