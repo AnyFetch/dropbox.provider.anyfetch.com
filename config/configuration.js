@@ -32,6 +32,7 @@ module.exports = {
   dropboxId: process.env.DROPBOX_API_ID,
   dropboxSecret: process.env.DROPBOX_API_SECRET,
 
+  appName: process.env.APP_NAME,
   providerUrl: process.env.PROVIDER_URL,
 
   appId: process.env.ANYFETCH_API_ID,
